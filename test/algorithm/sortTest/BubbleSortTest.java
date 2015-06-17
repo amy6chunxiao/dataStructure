@@ -1,13 +1,13 @@
-package com.cqupt.algorithm.sortTest;
+package algorithm.sortTest;
 
-import com.cqupt.algorithm.sort.InsertSort;
+import com.cqupt.algorithm.sort.BubbleSort;
 import com.cqupt.algorithm.sort.Sort;
 
-public class InsertSortTest {
+public class BubbleSortTest {
 	public static void main(String[] args) {
-		Sort<Double> insertSort = new InsertSort<Double>();
+		Sort<Double> bubbleSort = new BubbleSort<Double>();
 		Double[] array = {2.0, 4.0, 2.0, 5.0, 9.0, 12.0, 3.0, 10.0, 1.0, 1.0};
-		insertSort.sort(array, array.length);
+		bubbleSort.sort(array, array.length);
 
 		System.out.println("排序完成：");
 		for (double d : array) {

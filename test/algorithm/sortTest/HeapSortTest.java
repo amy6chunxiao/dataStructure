@@ -1,4 +1,4 @@
-package com.cqupt.algorithm.sortTest;
+package algorithm.sortTest;
 
 import com.cqupt.algorithm.sort.HeapSort;
 import com.cqupt.algorithm.sort.Sort;
