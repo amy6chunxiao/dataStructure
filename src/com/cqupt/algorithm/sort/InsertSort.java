@@ -8,8 +8,10 @@ package com.cqupt.algorithm.sort;
  * @author liucx
  * @created 2015-6-16 下午9:27:58
  */
-public class InsertSort<T extends Comparable<? super T>> implements Sort<T> {
+@SuppressWarnings("rawtypes")
+public class InsertSort<T extends Comparable> implements Sort<T> {
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public void sort(T[] array, int num) {
 		for (int i = 1; i < num; i++) {

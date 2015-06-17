@@ -8,7 +8,8 @@ package com.cqupt.algorithm.sort;
  * @author liucx
  * @created 2015-6-16 下午4:46:32
  */
-public class QuickSort<T extends Comparable<? super T>> implements Sort<T> {
+@SuppressWarnings("rawtypes")
+public class QuickSort<T extends Comparable> implements Sort<T> {
 
 	@Override
 	public void sort(T[] array, int num) {
@@ -47,6 +48,7 @@ public class QuickSort<T extends Comparable<? super T>> implements Sort<T> {
 	 *            待划分区间最右侧记录
 	 * @return 轴值位置
 	 */
+	@SuppressWarnings("unchecked")
 	public int partition(T[] r, int pBegin, int pEnd) {
 		int i = pBegin, j = pEnd;
 		while (i < j) {

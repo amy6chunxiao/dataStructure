@@ -8,7 +8,8 @@ package com.cqupt.algorithm.sort;
  * @author liucx
  * @created 2015-6-16 下午3:37:51
  */
-public class HeapSort<T extends Comparable<? super T>> implements Sort<T> {
+@SuppressWarnings("rawtypes")
+public class HeapSort<T extends Comparable> implements Sort<T> {
 
 	@Override
 	public void sort(T[] array, int num) {
@@ -31,6 +32,7 @@ public class HeapSort<T extends Comparable<? super T>> implements Sort<T> {
 	 * @param k 
 	 * @param m 
 	 */
+	@SuppressWarnings("unchecked")
 	public void shift(T[] array, int k, int m) {
 		int i = k, j = k * 2;
 		while (j <= m) {

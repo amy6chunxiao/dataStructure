@@ -1,6 +1,7 @@
 package com.cqupt.algorithm.sort;
 
-public class SelectionSort<T extends Comparable<? super T>> implements Sort<T> {
+@SuppressWarnings("rawtypes")
+public class SelectionSort<T extends Comparable> implements Sort<T> {
 
 	@Override
 	public void sort(T[] array, int num) {
@@ -22,6 +23,7 @@ public class SelectionSort<T extends Comparable<? super T>> implements Sort<T> {
 	 *            无序区终止点
 	 * @return 最小记录的序号
 	 */
+	@SuppressWarnings("unchecked")
 	public int getMinPointIndex(T[] array, int pBegin, int pEnd) {
 		T minVlue = array[pBegin];
 		int index = pBegin;

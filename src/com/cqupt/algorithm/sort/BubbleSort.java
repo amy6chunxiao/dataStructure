@@ -1,7 +1,5 @@
 package com.cqupt.algorithm.sort;
 
-import java.util.logging.Logger;
-
 /**
  * 
  * Title: BubbleSort.java
@@ -10,8 +8,10 @@ import java.util.logging.Logger;
  * @author liucx
  * @created 2015-6-16 下午5:22:50
  */
-public class BubbleSort<T extends Comparable<? super T>> implements Sort<T> {
-	
+@SuppressWarnings("rawtypes")
+public class BubbleSort<T extends Comparable> implements Sort<T> {
+
+	@SuppressWarnings("unchecked")
 	@Override
 	public void sort(T[] array, int num) {
 		for (int i = 0; i < num; i++) {
