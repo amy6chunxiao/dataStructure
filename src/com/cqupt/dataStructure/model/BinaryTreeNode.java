@@ -37,4 +37,10 @@ public class BinaryTreeNode<T> {
 		this.rightChild = rightChild;
 	}
 
+	@Override
+	public String toString() {
+		return "BinaryTreeNode [data=" + data + ", leftChild=" + leftChild
+				+ ", rightChild=" + rightChild + "]";
+	}
+
 }
