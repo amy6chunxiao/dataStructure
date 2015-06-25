@@ -23,14 +23,15 @@ public class HeapSort<T extends Comparable> implements Sort<T> {
 			shift(array, 1, num - i);
 		}
 	}
+
 	/**
 	 * 
 	 * @description 一次调整堆的过程，从最后一个分支节点开始调整堆
 	 * @author liucx
 	 * @created 2015-6-16 下午4:48:43
 	 * @param array
-	 * @param k 
-	 * @param m 
+	 * @param k
+	 * @param m
 	 */
 	@SuppressWarnings("unchecked")
 	public void shift(T[] array, int k, int m) {

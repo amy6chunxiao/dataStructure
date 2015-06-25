@@ -4,7 +4,7 @@ package com.cqupt.dataStructure.model;
  * 
  * Title: BinaryTreeNode.java
  * 
- * @description:二叉树
+ * @description:二叉树节点
  * @author liucx
  * @created 2015年6月19日 下午9:10:17
  */
