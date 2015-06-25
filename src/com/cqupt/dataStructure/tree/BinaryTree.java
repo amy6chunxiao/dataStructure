@@ -9,19 +9,7 @@ public abstract class BinaryTree<T> {
 		this.root = root;
 	}
 
-	public void preOrder() {
-		preOrder(root);
-	}
-
-	public void inOrder() {
-		inOrder(root);
-	}
-
-	public void postOrder() {
-		postOrder(root);
-	}
-
-	protected void preOrder(BinaryTreeNode<T> root) {
+	public void preOrder(BinaryTreeNode<T> root) {
 		if (root == null)
 			return;
 		else {
@@ -31,7 +19,7 @@ public abstract class BinaryTree<T> {
 		}
 	}
 
-	protected void inOrder(BinaryTreeNode<T> root) {
+	public void inOrder(BinaryTreeNode<T> root) {
 		if (root == null)
 			return;
 		else {
@@ -41,7 +29,7 @@ public abstract class BinaryTree<T> {
 		}
 	}
 
-	protected void postOrder(BinaryTreeNode<T> root) {
+	public void postOrder(BinaryTreeNode<T> root) {
 		if (root == null)
 			return;
 		else {
@@ -50,5 +38,25 @@ public abstract class BinaryTree<T> {
 			System.out.println(root.getData());
 		}
 	}
+
+	public int getLength(BinaryTreeNode<T> root) {
+		if (root == null)
+			return 0;
+		else {
+			int ldepth = getLength(root.getLeftChild());
+			int rdepth = getLength(root.getRightChild());
+			return Math.max(ldepth, rdepth) + 1;
+		}
+	}
+
+	public abstract BinaryTreeNode<T> getMinValue(BinaryTreeNode<T> root);
+
+	public abstract BinaryTreeNode<T> getMaxValue(BinaryTreeNode<T> root);
+
+	public abstract BinaryTreeNode<T> find(T k, boolean isIterative);
+
+	public abstract void insert(BinaryTreeNode<T> root, BinaryTreeNode<T> node);
+
+	public abstract void delete(BinaryTreeNode<T> node);
 
 }
