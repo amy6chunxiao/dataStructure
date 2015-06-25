@@ -1,4 +1,4 @@
-package com.cqupt.algorithm.DynamicProgramming;
+package com.cqupt.algorithm.dynamicProgramming;
 
 import java.util.List;
 
