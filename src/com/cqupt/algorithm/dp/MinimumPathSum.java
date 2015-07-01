@@ -1,4 +1,4 @@
-package com.cqupt.algorithm.dynamicProgramming;
+package com.cqupt.algorithm.dp;
 
 /**
  * 
