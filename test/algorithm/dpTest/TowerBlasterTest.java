@@ -3,7 +3,7 @@ package algorithm.dpTest;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.cqupt.algorithm.dynamicProgramming.TowerBlaster;
+import com.cqupt.algorithm.dp.TowerBlaster;
 
 public class TowerBlasterTest {
 	public static void main(String[] args) {

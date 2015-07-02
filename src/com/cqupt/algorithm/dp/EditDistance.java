@@ -18,7 +18,16 @@ package com.cqupt.algorithm.dp;
 public class EditDistance {
 	private int[][] minPath;
 
-	// 与LCS算法刚好相反，LCS是求最大子序列，这个是求最小编辑距离
+	/**
+	 * 
+	 * 
+	 * @description 与LCS算法刚好相反，LCS是求最大子序列，这个是求最小编辑距离
+	 * @author liucx
+	 * @created 2015年7月1日 下午9:25:22
+	 * @param word1
+	 * @param word2
+	 * @return
+	 */
 	public int minDistance(String word1, String word2) {
 
 		if (word1.equals(word2))
