@@ -37,4 +37,13 @@ public class LinkedQueue<T> {
 		return data;
 	}
 
+	public T getQueue() throws Exception {
+		if (rear == front)
+			throw new Exception("队列为空");
+		return front.getNext().getData();
+	}
+
+	public int empty() {
+		return rear == front ? 1 : 0;
+	}
 }

@@ -1,7 +1,5 @@
 package com.cqupt.algorithm.basic;
 
-import java.util.EmptyStackException;
-
 /**
  * 
  * Title: BothStack.java
