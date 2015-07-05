@@ -1,4 +1,4 @@
-package com.cqupt.algorithm.basic;
+package com.cqupt.algorithm.others;
 
 /**
  * 

@@ -9,34 +9,75 @@ public abstract class BinaryTree<T> {
 		this.root = root;
 	}
 
-	public void preOrder(BinaryTreeNode<T> root) {
-		if (root == null)
-			return;
-		else {
-			System.out.println(root.getData());
-			preOrder(root.getLeftChild());
-			preOrder(root.getRightChild());
+	public void preOrder(BinaryTreeNode<T> root, BinaryTreeNode<T>[] stack) {
+		int top = -1;
+		while (root != null || top != -1) {
+			while (root != null) {
+				System.out.println(root.getData());
+				stack[++top] = root;
+				root = root.getLeftChild();
+			}
+
+			if (top != -1) {
+				BinaryTreeNode<T> p = stack[top--];
+				root = p.getRightChild();
+			}
 		}
 	}
 
-	public void inOrder(BinaryTreeNode<T> root) {
+	public void iterativePreOrder(BinaryTreeNode<T> root) {
 		if (root == null)
 			return;
 		else {
-			inOrder(root.getLeftChild());
 			System.out.println(root.getData());
-			inOrder(root.getRightChild());
+			iterativePreOrder(root.getLeftChild());
+			iterativePreOrder(root.getRightChild());
 		}
 	}
 
-	public void postOrder(BinaryTreeNode<T> root) {
+	public void inOrder(BinaryTreeNode<T> root, BinaryTreeNode<T>[] stack) {
+		int top = -1;
+		while (root != null || top != -1) {
+			while (root != null) {
+				stack[++top] = root;
+				root = root.getLeftChild();
+			}
+			if (top != -1) {
+				root = stack[top--];
+				System.out.println(root);
+				root = root.getRightChild();
+			}
+		}
+	}
+
+	public void iterativeInOrder(BinaryTreeNode<T> root) {
 		if (root == null)
 			return;
 		else {
-			postOrder(root.getLeftChild());
-			postOrder(root.getRightChild());
+			iterativeInOrder(root.getLeftChild());
+			System.out.println(root.getData());
+			iterativeInOrder(root.getRightChild());
+		}
+	}
+
+	public void postOrder(BinaryTreeNode<T> root, BinaryTreeNode<T>[] stack) {
+		
+	}
+
+	public void iterativePostOrder(BinaryTreeNode<T> root) {
+		if (root == null)
+			return;
+		else {
+			iterativePostOrder(root.getLeftChild());
+			iterativePostOrder(root.getRightChild());
 			System.out.println(root.getData());
 		}
+	}
+
+	public void levelOrder(BinaryTreeNode<T> root) {
+		if (root == null)
+			return;
+		// BinaryTree<T> []queue=new BinaryTree<T>[];
 	}
 
 	public int getLength(BinaryTreeNode<T> root) {

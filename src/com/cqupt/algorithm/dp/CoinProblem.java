@@ -23,7 +23,7 @@ public class CoinProblem {
 	 * @param value
 	 * @return
 	 */
-	public int solution(int[] coins, int value) {
+	public int solution(int[] coins, int value, int[] solution) {
 		// 记录硬币总和为0-value时所需最少硬币数
 		int[] mins = new int[value + 1];
 		mins[0] = 0;
@@ -32,8 +32,9 @@ public class CoinProblem {
 			// 注意这里不能用Integer.MAX_VALUE,否则会造成溢出问题，数据变为负数，比0小
 			mins[i] = value + 1;
 			for (int j = 0; j < coins.length; j++) {
-				if (i >= coins[j]) {
-					mins[i] = Math.min(mins[i], mins[i - coins[j]] + 1);
+				if (i >= coins[j] && mins[i] > mins[i - coins[j]] + 1) {
+					mins[i] = mins[i - coins[j]] + 1;
+					solution[i - 1] = coins[j];
 				}
 			}
 		}
